@@ -4,21 +4,93 @@ function getComputerChoice() {
 	const choice = ['Rock', 'Paper', 'Scissors']; // Variable array to contain computer choices
     const randomChoice = Math.floor(Math.random() * choice.length); // Randomly choose an array item from choice variable
     const randomChoiceFinal = (randomChoice, choice[randomChoice]); // Picks a rand
-    console.log(randomChoiceFinal);
+    return randomChoiceFinal;
 }
-// 
+ 
+// playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock
+// playerChoice = playerInput[0].toUpperCase() + playerInput.substring(1);
 
-function getPlayerChoice() {             //Function to get input from player
+let lossCounter = 0; // Loss counter for player
+let winCounter = 0; // Win counter for player
+function round(playerSelection, computerSelection) {
+    playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock
+    playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
+    playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
+    if (playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors') {
+        console.log(playerSelection);
+        // Loss conditions
+            if (playerSelection === 'Rock' && getComputerChoice() === 'Paper') { // Checks if player lost rock outcome
+                console.log("You lose! Paper beats Rock.");
+                lossCounter++;
+            }
+            else if (playerSelection === 'Paper' && getComputerChoice() === 'Scissors') { // Checks if player lost paper outcome
+                console.log("You lose! Scissors beats Paper.");
+                lossCounter++;
+            }
+            else if (playerSelection === 'Scissors' && getComputerChoice() === 'Rock') {
+                console.log("You lose! Rock beats Scissors.");
+                losscounter++;
+            }
+            console.log(`You lost ${lossCounter} amount of times.`);
+            // Win conditions
+
+
+    } 
+    else { // Restarts function if player enters anything but rock,paper,scissors
+        round();
+    }
+}
+
+round();
+getComputerChoice();
+console.log("Computer:" + getComputerChoice());
+
+
+
+
+
+
+
+
+
+
+//Psuedo for battle
+/* 
+Computer Vs Player input
+if playerChoice === Rock && getComputerChoice() === 'Paper
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Junk code section: 
+// function getPlayerChoice() {             //Function to get input from player
     // input = players choice
-    playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock 
+    // playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock 
     // playerChoiceunused = playerInput.toUpperCase(); // Variable to convert players choice to case insensitive.
-    playerChoice = playerInput[0].toUpperCase() + playerInput.substring(1); // Variable to convert players choice to case insensitive, and capitalized the first letter.
+    // playerChoice = playerInput[0].toUpperCase() + playerInput.substring(1); // Variable to convert players choice to case insensitive, and capitalized the first letter.
     // for ((playerChoice != 'Rock') || (playerChoice != 'Paper') || (playerChoice != 'Scissors'))
     // {
     //     alert("Enter Rock, Paper, or Scissors!");
     //     getPlayerChoice();
     // }
-}
-getPlayerChoice();
-console.log(playerChoice);
-getComputerChoice();
+    // if (playerChoice != 'Rock' || playerChoice != 'Paper' || playerChoice != 'Scissors') {
+    //     console.log("You must enter either 'Rock', 'Paper', or 'Scissors'.");
+
+    // if (playerChoice != 'Rock' || playerChoice != 'Paper' || playerChoice != 'Scissors') {
+    //     console.log("You must enter either 'Rock', 'Paper', or 'Scissors'.");
+    //     playerInput = prompt("Enter Rock, Paper, Or Scissors!");
+    // }
+//     return playerChoice;
+// }
