@@ -19,6 +19,8 @@ function round(playerSelection, computerSelection) {
     playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
     playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
     console.log("Computer: " + getComputerChoice());
+    // IMPORTANT TO DO!!!!!!
+    // Split theses functions up into there own breanch with nested functions. if player === rock then if statement for both outcomes
     if (playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors') {
         console.log(playerSelection);
         // Loss conditions
