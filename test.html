@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function getComputerChoice() {
+			//random output of rock, paper, or scissors
+			// return this output
+			const choice = ['Rock', 'Paper', 'Scissors']; // Variable array to contain computer choices
+			const randomChoice = Math.floor(Math.random() * choice.length); // Randomly choose an array item from choice variable
+			const randomChoiceFinal = (randomChoice, choice[randomChoice]); // Picks a random choice 
+			return randomChoiceFinal;
+		}
+		computer = getComputerChoice(); // Assigning a variable to the computer choice function
+
+		function getPlayerChoice() {
+			playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock
+			playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
+			playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
+			return playerSelection;
+		}
+		player = getPlayerChoice(); // Assigning a variable to the player choice function
+		compString = "Computer: ";
+		playString = "Player: ";
+
+		let winCounter = 0; // Declaring counter for user's number of wins/losses
+		let lossCounter = 0;
+		let winner; // Declaring winner/loser console.log variables
+		let loser;
+		let tie = 0;
+		function round(computer, player) { // Function to determine winner of a round between user and computer
+			if (player === 'Rock' && computer === 'Paper') {
+				loser = console.log("You lose! Paper beats Rock.");
+				lossCounter++;
+				return loser;
+			}
+			else if (player === 'Rock' && computer === 'Scissors') {
+				winner = console.log("You win! Rock beats Scissors.");
+				winCounter++;
+				return winner;
+			}
+			else if (player === 'Paper' && computer === 'Scissors') {
+				loser = console.log("You lose! Scissors beats Paper.");
+				lossCounter++;
+				return loser;
+			}
+			else if (player === 'Paper' && computer === 'Rock') {
+				winner = console.log("You win! Paper beats Rock.");
+				winCounter++;
+				return winner;
+			}
+			else if (player === 'Scissors' && computer === 'Rock') {
+				loser = console.log("You lose! Rock beats Scissors");
+				lossCounter++;
+				return loser;
+			}
+			else if (player === 'Scissors' && computer === 'Paper') {
+				winner = console.log("You win! Scissors beats Paper.");
+				winCounter++;
+				return winner;
+			}
+			else {
+				console.log("Tie!");	
+				
+			}
+		}
+		// Figure out what to do if user types something other than Rock, paper, scissors
+
+		console.log(compString + computer);
+		console.log(playString + player);
+		round(computer, player);
+	</script>
+
+
+</body>
+</html>
+
+
+
