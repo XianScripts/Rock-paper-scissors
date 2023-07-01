@@ -95,7 +95,7 @@ function game() {
     }
 
     function getPlayerChoice() {
-        playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock
+        playerInput = prompt("Enter Rock, Paper, Or Scissors! Game will ask you 5 times."); // Variable to get rock
         playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
         playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
         return playerSelection;
@@ -125,98 +125,3 @@ function game() {
             console.log("Its a tie!");
         }
     }
-
-    // round(computer, player);
-    // console.log(compString + computer); // Prints our computer and compString so user can see who put what
-    // console.log(playString + player); // Same as above but for player ^
-    // console.log("Wins: " + winCounter);
-    // console.log("Losses: " + lossCounter);
-    
-    // round(computer, player);
-    // console.log(compString + computer); // Prints our computer and compString so user can see who put what
-    // console.log(playString + player); // Same as above but for player ^
-    // console.log("Wins: " + winCounter);
-    // console.log("Losses: " + lossCounter);
-
-    // round(computer, player);
-    // console.log(compString + computer); // Prints our computer and compString so user can see who put what
-    // console.log(playString + player); // Same as above but for player ^
-    // console.log("Wins: " + winCounter);
-    // console.log("Losses: " + lossCounter);
-
-    // round(computer, player);
-    // console.log(compString + computer); // Prints our computer and compString so user can see who put what
-    // console.log(playString + player); // Same as above but for player ^
-    // console.log("Wins: " + winCounter);
-    // console.log("Losses: " + lossCounter);
-
-
-
-
-// for (let i = 0; i <= 5; i++) {
-
-// }
-// console.log(compString + computer); // Prints our computer and compString so user can see who put what
-// console.log(playString + player); // Same as above but for player ^
-// console.log("Wins: " + winCounter);
-// console.log("Losses: " + lossCounter);
-
-
-// Figure out what to do if user types something other than Rock, paper, scissors
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Psuedo for battle
-/* 
-Computer Vs Player input
-if playerChoice === Rock && getComputerChoice() === 'Paper
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/// Junk code section: 
-// function getPlayerChoice() {             //Function to get input from player
-    // input = players choice
-    // playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock 
-    // playerChoiceunused = playerInput.toUpperCase(); // Variable to convert players choice to case insensitive.
-    // playerChoice = playerInput[0].toUpperCase() + playerInput.substring(1); // Variable to convert players choice to case insensitive, and capitalized the first letter.
-    // for ((playerChoice != 'Rock') || (playerChoice != 'Paper') || (playerChoice != 'Scissors'))
-    // {
-    //     alert("Enter Rock, Paper, or Scissors!");
-    //     getPlayerChoice();
-    // }
-    // if (playerChoice != 'Rock' || playerChoice != 'Paper' || playerChoice != 'Scissors') {
-    //     console.log("You must enter either 'Rock', 'Paper', or 'Scissors'.");
-
-    // if (playerChoice != 'Rock' || playerChoice != 'Paper' || playerChoice != 'Scissors') {
-    //     console.log("You must enter either 'Rock', 'Paper', or 'Scissors'.");
-    //     playerInput = prompt("Enter Rock, Paper, Or Scissors!");
-    // }
-//     return playerChoice;
-// 
