@@ -54,16 +54,66 @@ function round(computer, player) { // Function to determine winner of a round be
         winCounter++;
         return winner;
     }
+    else if (player !== 'Rock' || player !== 'Paper' || player !== 'Scissors') {
+        console.log("Try again, please only enter 'Rock', 'Paper', 'Scissors'");
+        
+    }
     else {
-        console.log("Tie!");	
+        console.log("N/A");	
         
     }
 }
+
+function game() {
+    
+    console.log(compString + computer); // Prints our computer and compString so user can see who put what
+    console.log(playString + player); // Same as above but for player ^
+    round(computer, player);
+    console.log("Wins: " + winCounter);
+    console.log("Losses: " + lossCounter);
+
+    // round(computer, player);
+    // console.log(compString + computer); // Prints our computer and compString so user can see who put what
+    // console.log(playString + player); // Same as above but for player ^
+    // console.log("Wins: " + winCounter);
+    // console.log("Losses: " + lossCounter);
+    
+    // round(computer, player);
+    // console.log(compString + computer); // Prints our computer and compString so user can see who put what
+    // console.log(playString + player); // Same as above but for player ^
+    // console.log("Wins: " + winCounter);
+    // console.log("Losses: " + lossCounter);
+
+    // round(computer, player);
+    // console.log(compString + computer); // Prints our computer and compString so user can see who put what
+    // console.log(playString + player); // Same as above but for player ^
+    // console.log("Wins: " + winCounter);
+    // console.log("Losses: " + lossCounter);
+
+    // round(computer, player);
+    // console.log(compString + computer); // Prints our computer and compString so user can see who put what
+    // console.log(playString + player); // Same as above but for player ^
+    // console.log("Wins: " + winCounter);
+    // console.log("Losses: " + lossCounter);
+}
+game();
+// for (let i = 0; i <= 5; i++) {
+
+// }
+// console.log(compString + computer); // Prints our computer and compString so user can see who put what
+// console.log(playString + player); // Same as above but for player ^
+// console.log("Wins: " + winCounter);
+// console.log("Losses: " + lossCounter);
+
+
 // Figure out what to do if user types something other than Rock, paper, scissors
 
-console.log(compString + computer); // Prints our computer and compString so user can see who put what
-console.log(playString + player); // Same as above but for player ^
-round(computer, player);
+
+
+
+
+
+
 
 
 
