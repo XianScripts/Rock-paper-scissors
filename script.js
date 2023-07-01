@@ -10,46 +10,64 @@ let tieCounter = 0;
 let playCount = 0;
 function round(computer, player) { // Function to determine winner of a round between user and computer
     if (player === 'Rock' && computer === 'Paper') { // Checks if player lost rock outcome
+        console.log(compString + 'Paper');
+        console.log(playString + 'Rock');
         loser = console.log("You lose! Paper beats Rock.");
         lossCounter++;
         return loser;
     }
     else if (player === 'Rock' && computer === 'Scissors') { // Checks if player won rock outcome
+        console.log(compString + 'Scissors');
+        console.log(playString + 'Rock');
         winner = console.log("You win! Rock beats Scissors.");
         winCounter++;
         return winner;
     }
     else if (player === 'Rock' && computer === 'Rock') { // Checks for tie
+        console.log(compString + 'Rock');
+        console.log(playString + 'Rock');
         tie = console.log("Tie!");
         tieCounter++;
         return tie;
     }
     else if (player === 'Paper' && computer === 'Scissors') { // Checks if player lost paper outcome
+        console.log(compString + 'Scissors');
+        console.log(playString + 'Paper');
         loser = console.log("You lose! Scissors beats Paper.");
         lossCounter++;
         return loser;
     }
     else if (player === 'Paper' && computer === 'Rock') { // Checks if player won paper outcome
+        console.log(compString + 'Rock');
+        console.log(playString + 'Paper');
         winner = console.log("You win! Paper beats Rock.");
         winCounter++;
         return winner;
     }
     else if (player === 'Paper' && computer === 'Paper') { // Checks for tie
+        console.log(compString + 'Paper');
+        console.log(playString + 'Paper');
         tie = console.log("Tie!");
         tieCounter++;
         return tie;
     }
     else if (player === 'Scissors' && computer === 'Rock') { // Checks if player lost scissors outcome
+        console.log(compString + 'Rock');
+        console.log(playString + 'Scissors');
         loser = console.log("You lose! Rock beats Scissors");
         lossCounter++;
         return loser;
     }
     else if (player === 'Scissors' && computer === 'Paper') { // Checks if player won scissors outcome
+        console.log(compString + 'Paper');
+        console.log(playString + 'Scissors');
         winner = console.log("You win! Scissors beats Paper.");
         winCounter++;
         return winner;
     }
     else if (player === 'Scissors' && computer === 'Scissors') { // Checks for tie
+        console.log(compString + 'Scissors');
+        console.log(playString + 'Scissors');
         tie = console.log("Tie!");
         tieCounter++;
         return tie;
@@ -63,7 +81,7 @@ function round(computer, player) { // Function to determine winner of a round be
 }
 
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) { // Loop to play game function 5 times
     game();
 }
 function game() {
@@ -85,15 +103,15 @@ function game() {
 
     computer = getComputerChoice();
     player = getPlayerChoice();
-    round(computer, player);
-    playCount++;
+    round(computer, player); // Runs the round inside game() function
+    playCount++; // +1 playcount
 
     }
     console.log(`Playcount: ${playCount}`);
     console.log("Wins: " + winCounter);
     console.log("Losses: " + lossCounter);
     console.log("Ties: " + tieCounter);
-    if (playCount = 5){ // Condition with ternary to annouce win or loss after 5 games
+    if (playCount = 5){ // Conditional to determine who won 5 rounds
         if (winCounter > lossCounter) {
             console.log("You win!");
         }
@@ -101,6 +119,9 @@ function game() {
             console.log("You lose!");
         }
         else if (tieCounter > winCounter && lossCounter) {
+            console.log("Its a tie!");
+        }
+        else if (winCounter === lossCounter) {
             console.log("Its a tie!");
         }
     }
