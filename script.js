@@ -1,20 +1,3 @@
-function getComputerChoice() {
-    //random output of rock, paper, or scissors
-    // return this output
-    const choice = ['Rock', 'Paper', 'Scissors']; // Variable array to contain computer choices
-    const randomChoice = Math.floor(Math.random() * choice.length); // Randomly choose an array item from choice variable
-    const randomChoiceFinal = (randomChoice, choice[randomChoice]); // Picks a random choice 
-    return randomChoiceFinal;
-}
-computer = getComputerChoice(); // Assigning a variable to the computer choice function
-
-function getPlayerChoice() {
-    playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock
-    playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
-    playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
-    return playerSelection;
-}
-player = getPlayerChoice(); // Assigning a variable to the player choice function
 compString = "Computer: "; // String to let user know who chose what
 playString = "Player: "; // Same thing as compSring ^
 
@@ -22,7 +5,9 @@ let winCounter = 0; // Declaring counter for user's number of wins/losses
 let lossCounter = 0;
 let winner; // Declaring winner/loser console.log variables
 let loser;
-let tie = 0;
+let tie;
+let tieCounter = 0;
+let playCount = 0;
 function round(computer, player) { // Function to determine winner of a round between user and computer
     if (player === 'Rock' && computer === 'Paper') { // Checks if player lost rock outcome
         loser = console.log("You lose! Paper beats Rock.");
@@ -34,6 +19,11 @@ function round(computer, player) { // Function to determine winner of a round be
         winCounter++;
         return winner;
     }
+    else if (player === 'Rock' && computer === 'Rock') { // Checks for tie
+        tie = console.log("Tie!");
+        tieCounter++;
+        return tie;
+    }
     else if (player === 'Paper' && computer === 'Scissors') { // Checks if player lost paper outcome
         loser = console.log("You lose! Scissors beats Paper.");
         lossCounter++;
@@ -43,6 +33,11 @@ function round(computer, player) { // Function to determine winner of a round be
         winner = console.log("You win! Paper beats Rock.");
         winCounter++;
         return winner;
+    }
+    else if (player === 'Paper' && computer === 'Paper') { // Checks for tie
+        tie = console.log("Tie!");
+        tieCounter++;
+        return tie;
     }
     else if (player === 'Scissors' && computer === 'Rock') { // Checks if player lost scissors outcome
         loser = console.log("You lose! Rock beats Scissors");
@@ -54,23 +49,61 @@ function round(computer, player) { // Function to determine winner of a round be
         winCounter++;
         return winner;
     }
-    else if (player !== 'Rock' || player !== 'Paper' || player !== 'Scissors') {
-        console.log("Try again, please only enter 'Rock', 'Paper', 'Scissors'");
+    else if (player === 'Scissors' && computer === 'Scissors') { // Checks for tie
+        tie = console.log("Tie!");
+        tieCounter++;
+        return tie;
+    }
+    else if (!(player === 'Rock' || player === 'Paper' || player === 'Scissors')) {
+        console.log("Refresh and try again, please only enter 'Rock', 'Paper', 'Scissors'");
         
     }
-    else {
-        console.log("N/A");	
-        
-    }
+       
+    
 }
 
+
+for (let i = 0; i < 5; i++) {
+    game();
+}
 function game() {
-    
-    console.log(compString + computer); // Prints our computer and compString so user can see who put what
-    console.log(playString + player); // Same as above but for player ^
+    function getComputerChoice() {
+        //random output of rock, paper, or scissors
+        // return this output
+        const choice = ['Rock', 'Paper', 'Scissors']; // Variable array to contain computer choices
+        const randomChoice = Math.floor(Math.random() * choice.length); // Randomly choose an array item from choice variable
+        const randomChoiceFinal = (randomChoice, choice[randomChoice]); // Picks a random choice 
+        return randomChoiceFinal;
+    }
+
+    function getPlayerChoice() {
+        playerInput = prompt("Enter Rock, Paper, Or Scissors!"); // Variable to get rock
+        playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
+        playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
+        return playerSelection;
+    }
+
+    computer = getComputerChoice();
+    player = getPlayerChoice();
     round(computer, player);
+    playCount++;
+
+    }
+    console.log(`Playcount: ${playCount}`);
     console.log("Wins: " + winCounter);
     console.log("Losses: " + lossCounter);
+    console.log("Ties: " + tieCounter);
+    if (playCount = 5){ // Condition with ternary to annouce win or loss after 5 games
+        if (winCounter > lossCounter) {
+            console.log("You win!");
+        }
+        else if (lossCounter >= tieCounter && lossCounter > winCounter) {
+            console.log("You lose!");
+        }
+        else if (tieCounter > winCounter && lossCounter) {
+            console.log("Its a tie!");
+        }
+    }
 
     // round(computer, player);
     // console.log(compString + computer); // Prints our computer and compString so user can see who put what
@@ -95,8 +128,10 @@ function game() {
     // console.log(playString + player); // Same as above but for player ^
     // console.log("Wins: " + winCounter);
     // console.log("Losses: " + lossCounter);
-}
-game();
+
+
+
+
 // for (let i = 0; i <= 5; i++) {
 
 // }
