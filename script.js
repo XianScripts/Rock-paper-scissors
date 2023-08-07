@@ -80,10 +80,10 @@ function round(computer, player) { // Function to determine winner of a round be
     
 }
 
-
-for (let i = 0; i < 5; i++) { // Loop to play game function 5 times
-    game();
-}
+// Removing logic to play 5 rounds temp
+// for (let i = 0; i < 5; i++) { // Loop to play game function 5 times
+//     game();
+// }
 function game() {
     function getComputerChoice() {
         //random output of rock, paper, or scissors
