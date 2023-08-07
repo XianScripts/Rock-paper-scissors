@@ -24,8 +24,8 @@
 			return playerSelection;
 		}
 		player = getPlayerChoice(); // Assigning a variable to the player choice function
-		compString = "Computer: ";
-		playString = "Player: ";
+		compString = "Computer: "; // String to let user know who chose what
+		playString = "Player: "; // Same thing as compSring ^
 
 		let winCounter = 0; // Declaring counter for user's number of wins/losses
 		let lossCounter = 0;
@@ -33,32 +33,32 @@
 		let loser;
 		let tie = 0;
 		function round(computer, player) { // Function to determine winner of a round between user and computer
-			if (player === 'Rock' && computer === 'Paper') {
+			if (player === 'Rock' && computer === 'Paper') { // Checks if player lost rock outcome
 				loser = console.log("You lose! Paper beats Rock.");
 				lossCounter++;
 				return loser;
 			}
-			else if (player === 'Rock' && computer === 'Scissors') {
+			else if (player === 'Rock' && computer === 'Scissors') { // Checks if player won rock outcome
 				winner = console.log("You win! Rock beats Scissors.");
 				winCounter++;
 				return winner;
 			}
-			else if (player === 'Paper' && computer === 'Scissors') {
+			else if (player === 'Paper' && computer === 'Scissors') { // Checks if player lost paper outcome
 				loser = console.log("You lose! Scissors beats Paper.");
 				lossCounter++;
 				return loser;
 			}
-			else if (player === 'Paper' && computer === 'Rock') {
+			else if (player === 'Paper' && computer === 'Rock') { // Checks if player won paper outcome
 				winner = console.log("You win! Paper beats Rock.");
 				winCounter++;
 				return winner;
 			}
-			else if (player === 'Scissors' && computer === 'Rock') {
+			else if (player === 'Scissors' && computer === 'Rock') { // Checks if player lost scissors outcome
 				loser = console.log("You lose! Rock beats Scissors");
 				lossCounter++;
 				return loser;
 			}
-			else if (player === 'Scissors' && computer === 'Paper') {
+			else if (player === 'Scissors' && computer === 'Paper') { // Checks if player won scissors outcome
 				winner = console.log("You win! Scissors beats Paper.");
 				winCounter++;
 				return winner;
@@ -70,8 +70,8 @@
 		}
 		// Figure out what to do if user types something other than Rock, paper, scissors
 
-		console.log(compString + computer);
-		console.log(playString + player);
+		console.log(compString + computer); // Prints our computer and compString so user can see who put what
+		console.log(playString + player); // Same as above but for player ^
 		round(computer, player);
 	</script>
 
