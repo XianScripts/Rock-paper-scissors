@@ -93,6 +93,7 @@ function round(computer, player) { // Function to determine winner of a round be
 }
 
 
+let resultText = document.querySelector('#game-results').children;
 const rock = document.querySelector('.rock');
 rock.addEventListener('click', () => {
     computer = getComputerChoice();
@@ -123,7 +124,12 @@ scissors.addEventListener('click', () => {
     playcounter();
 })
 
+
+
 function playcounter() {
+    console.log("Wins: " + winCounter);
+    console.log("Losses: " + lossCounter);
+    console.log("Ties: " + tieCounter);
     if (playCount === 5){ // Conditional to determine who won 5 rounds
         if (winCounter > lossCounter) {
             console.log("You won through 5 rounds!");
@@ -138,6 +144,12 @@ function playcounter() {
             console.log("Its a tie through 5 rounds!");
         }
     }
+
+
+    resultText[0].textContent = `Wins so far: ${winCounter}`;
+    resultText[1].textContent = `Losses so far: ${lossCounter}`;
+    resultText[2].textContent = `Ties so far: ${tieCounter}`;
+    // textResults.textContent = `Losses so far: ${lossCounter}`;
 }
 
 
