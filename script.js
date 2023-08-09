@@ -87,6 +87,7 @@ function round(computer, player) { // Function to determine winner of a round be
         console.log("Refresh and try again, please only enter 'Rock', 'Paper', 'Scissors'");
         
     }
+    
        
     
 }
@@ -98,6 +99,10 @@ rock.addEventListener('click', () => {
     player = 'Rock';
     round(computer, player);
     playCount++;
+    playcounter();
+    // console.log(playCount);
+    // console.log("Win :" + winCounter);
+    // console.log("Loss : " + lossCounter);
 })
 
 const paper = document.querySelector('.paper');
@@ -106,6 +111,7 @@ paper.addEventListener('click', () => {
     player = 'Paper';
     round(computer, player);
     playCount++;
+    playcounter();
 })
 
 const scissors = document.querySelector('.scissors');
@@ -114,23 +120,25 @@ scissors.addEventListener('click', () => {
     player = 'Scissors';
     round(computer, player);
     playCount++;
+    playcounter();
 })
-if (playCount = 5){ // Conditional to determine who won 5 rounds
-    if (winCounter > lossCounter) {
-        console.log("You win!");
-    }
-    else if (lossCounter >= tieCounter && lossCounter > winCounter) {
-        console.log("You lose!");
-    }
-    else if (tieCounter > winCounter && lossCounter) {
-        console.log("Its a tie!");
-    }
-    else if (winCounter === lossCounter) {
-        console.log("Its a tie!");
+
+function playcounter() {
+    if (playCount === 5){ // Conditional to determine who won 5 rounds
+        if (winCounter > lossCounter) {
+            console.log("You won through 5 rounds!");
+        }
+        else if (lossCounter >= tieCounter && lossCounter > winCounter) {
+            console.log("You lost through 5 rounds!");
+        }
+        else if (tieCounter > winCounter && lossCounter) {
+            console.log("Its a tie through 5 rounds!");
+        }
+        else if (winCounter === lossCounter) {
+            console.log("Its a tie through 5 rounds!");
+        }
     }
 }
-
-
 
 
 
@@ -183,21 +191,21 @@ if (playCount = 5){ // Conditional to determine who won 5 rounds
 
 
 
-    console.log(`Playcount: ${playCount}`);
-    console.log("Wins: " + winCounter);
-    console.log("Losses: " + lossCounter);
-    console.log("Ties: " + tieCounter);
-    if (playCount = 5){ // Conditional to determine who won 5 rounds
-        if (winCounter > lossCounter) {
-            console.log("You win!");
-        }
-        else if (lossCounter >= tieCounter && lossCounter > winCounter) {
-            console.log("You lose!");
-        }
-        else if (tieCounter > winCounter && lossCounter) {
-            console.log("Its a tie!");
-        }
-        else if (winCounter === lossCounter) {
-            console.log("Its a tie!");
-        }
-    }
+    // console.log(`Playcount: ${playCount}`);
+    // console.log("Wins: " + winCounter);
+    // console.log("Losses: " + lossCounter);
+    // console.log("Ties: " + tieCounter);
+    // if (playCount = 5){ // Conditional to determine who won 5 rounds
+    //     if (winCounter > lossCounter) {
+    //         console.log("You win!");
+    //     }
+    //     else if (lossCounter >= tieCounter && lossCounter > winCounter) {
+    //         console.log("You lose!");
+    //     }
+    //     else if (tieCounter > winCounter && lossCounter) {
+    //         console.log("Its a tie!");
+    //     }
+    //     else if (winCounter === lossCounter) {
+    //         console.log("Its a tie!");
+    //     }
+    // }
