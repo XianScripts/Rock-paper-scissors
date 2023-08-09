@@ -8,7 +8,18 @@ let loser;
 let tie;
 let tieCounter = 0;
 let playCount = 0;
+let player;
+function getComputerChoice() {
+    //random output of rock, paper, or scissors
+    // return this output
+    const choice = ['Rock', 'Paper', 'Scissors']; // Variable array to contain computer choices
+    const randomChoice = Math.floor(Math.random() * choice.length); // Randomly choose an array item from choice variable
+    const compChoice = (randomChoice, choice[randomChoice]); // Picks a random choice 
+    return compChoice;
+}
 function round(computer, player) { // Function to determine winner of a round between user and computer
+    
+
     if (player === 'Rock' && computer === 'Paper') { // Checks if player lost rock outcome
         console.log(compString + 'Paper');
         console.log(playString + 'Rock');
@@ -81,32 +92,97 @@ function round(computer, player) { // Function to determine winner of a round be
 }
 
 
-for (let i = 0; i < 5; i++) { // Loop to play game function 5 times
-    game();
-}
-function game() {
-    function getComputerChoice() {
-        //random output of rock, paper, or scissors
-        // return this output
-        const choice = ['Rock', 'Paper', 'Scissors']; // Variable array to contain computer choices
-        const randomChoice = Math.floor(Math.random() * choice.length); // Randomly choose an array item from choice variable
-        const randomChoiceFinal = (randomChoice, choice[randomChoice]); // Picks a random choice 
-        return randomChoiceFinal;
-    }
-
-    function getPlayerChoice() {
-        playerInput = prompt("Enter Rock, Paper, Or Scissors! Game will ask you 5 times."); // Variable to get rock
-        playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
-        playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
-        return playerSelection;
-    }
-
+const rock = document.querySelector('.rock');
+rock.addEventListener('click', () => {
     computer = getComputerChoice();
-    player = getPlayerChoice();
-    round(computer, player); // Runs the round inside game() function
-    playCount++; // +1 playcount
+    player = 'Rock';
+    round(computer, player);
+    playCount++;
+})
 
+const paper = document.querySelector('.paper');
+paper.addEventListener('click', () => {
+    computer = getComputerChoice();
+    player = 'Paper';
+    round(computer, player);
+    playCount++;
+})
+
+const scissors = document.querySelector('.scissors');
+scissors.addEventListener('click', () => {
+    computer = getComputerChoice();
+    player = 'Scissors';
+    round(computer, player);
+    playCount++;
+})
+if (playCount = 5){ // Conditional to determine who won 5 rounds
+    if (winCounter > lossCounter) {
+        console.log("You win!");
     }
+    else if (lossCounter >= tieCounter && lossCounter > winCounter) {
+        console.log("You lose!");
+    }
+    else if (tieCounter > winCounter && lossCounter) {
+        console.log("Its a tie!");
+    }
+    else if (winCounter === lossCounter) {
+        console.log("Its a tie!");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// for (let i = 0; i < 5; i++) { // Loop to play game function 5 times
+//     game();
+// }
+// function game() {
+//     function getComputerChoice() {
+//         //random output of rock, paper, or scissors
+//         // return this output
+//         const choice = ['Rock', 'Paper', 'Scissors']; // Variable array to contain computer choices
+//         const randomChoice = Math.floor(Math.random() * choice.length); // Randomly choose an array item from choice variable
+//         const randomChoiceFinal = (randomChoice, choice[randomChoice]); // Picks a random choice 
+//         return randomChoiceFinal;
+//     }
+
+//     function getPlayerChoice() {
+//         playerInput = prompt("Enter Rock, Paper, Or Scissors! Game will ask you 5 times."); // Variable to get rock
+//         playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
+//         playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
+//         return playerSelection;
+//     }
+
+//     computer = getComputerChoice();
+//     player = getPlayerChoice();
+//     round(computer, player); // Runs the round inside game() function
+//     playCount++; // +1 playcount
+
+//     }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     console.log(`Playcount: ${playCount}`);
     console.log("Wins: " + winCounter);
     console.log("Losses: " + lossCounter);
