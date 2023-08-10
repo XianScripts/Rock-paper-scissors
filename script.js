@@ -1,6 +1,8 @@
 compString = "Computer: "; // String to let user know who chose what
 playString = "Player: "; // Same thing as compSring ^
 
+// Game logic segment
+
 let winCounter = 0; // Declaring counter for user's number of wins/losses
 let lossCounter = 0;
 let winner; // Declaring winner/loser console.log variables
@@ -93,7 +95,10 @@ function round(computer, player) { // Function to determine winner of a round be
 }
 
 
+// UI segment
+
 let resultText = document.querySelector('#game-results').children;
+let resultContainer = document.querySelector('#game-results');
 const rock = document.querySelector('.rock');
 rock.addEventListener('click', () => {
     computer = getComputerChoice();
@@ -101,9 +106,6 @@ rock.addEventListener('click', () => {
     round(computer, player);
     playCount++;
     playcounter();
-    // console.log(playCount);
-    // console.log("Win :" + winCounter);
-    // console.log("Loss : " + lossCounter);
 })
 
 const paper = document.querySelector('.paper');
@@ -148,9 +150,15 @@ function playcounter() {
             resultText[4].textContent = "Its a tie through 5 rounds!";
         }
         
-        newButton = document.createElement('button');
+        // Creates the button UI appending and removing children
+        let newButton = document.createElement('button');
+        let newButtonContainer = document.querySelector('#reset-button');
+        newButtonContainer.className = "button";
         newButton.innerText = "Reset game?";
-        document.body.appendChild(newButton);
+        newButton.className = "button";
+        console.log(newButton.outerHTML);
+        console.log(newButtonContainer.outerHTML);
+        newButtonContainer.appendChild(newButton);
         newButton.addEventListener('click', () => {
             playCount = 0;
             winCounter = 0;
@@ -160,7 +168,7 @@ function playcounter() {
             resultText[1].textContent = `Wins so far: ${winCounter}`;
             resultText[2].textContent = `Losses so far: ${lossCounter}`;
             resultText[3].textContent = `Ties so far: ${tieCounter}`;
-            document.body.removeChild(newButton);
+            newButtonContainer.removeChild(newButton);
             resultText[4].textContent = "";
             resultText[0].textContent = "";
         })
@@ -174,73 +182,3 @@ function playcounter() {
     resultText[3].textContent = `Ties so far: ${tieCounter}`;
     // textResults.textContent = `Losses so far: ${lossCounter}`;
 }
-
-
-
-
-
-
-
-
-
-// for (let i = 0; i < 5; i++) { // Loop to play game function 5 times
-//     game();
-// }
-// function game() {
-//     function getComputerChoice() {
-//         //random output of rock, paper, or scissors
-//         // return this output
-//         const choice = ['Rock', 'Paper', 'Scissors']; // Variable array to contain computer choices
-//         const randomChoice = Math.floor(Math.random() * choice.length); // Randomly choose an array item from choice variable
-//         const randomChoiceFinal = (randomChoice, choice[randomChoice]); // Picks a random choice 
-//         return randomChoiceFinal;
-//     }
-
-//     function getPlayerChoice() {
-//         playerInput = prompt("Enter Rock, Paper, Or Scissors! Game will ask you 5 times."); // Variable to get rock
-//         playerToLower = playerInput.toLowerCase(); // Converts players input to all lowercase
-//         playerSelection = playerToLower[0].toUpperCase() + playerToLower.substring(1); // Uppercases the first letter, then concats it with the rest of the string
-//         return playerSelection;
-//     }
-
-//     computer = getComputerChoice();
-//     player = getPlayerChoice();
-//     round(computer, player); // Runs the round inside game() function
-//     playCount++; // +1 playcount
-
-//     }
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // console.log(`Playcount: ${playCount}`);
-    // console.log("Wins: " + winCounter);
-    // console.log("Losses: " + lossCounter);
-    // console.log("Ties: " + tieCounter);
-    // if (playCount = 5){ // Conditional to determine who won 5 rounds
-    //     if (winCounter > lossCounter) {
-    //         console.log("You win!");
-    //     }
-    //     else if (lossCounter >= tieCounter && lossCounter > winCounter) {
-    //         console.log("You lose!");
-    //     }
-    //     else if (tieCounter > winCounter && lossCounter) {
-    //         console.log("Its a tie!");
-    //     }
-    //     else if (winCounter === lossCounter) {
-    //         console.log("Its a tie!");
-    //     }
-    // }
