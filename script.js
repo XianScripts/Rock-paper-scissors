@@ -133,22 +133,26 @@ function playcounter() {
     if (playCount === 5){ // Conditional to determine who won 5 rounds
         if (winCounter > lossCounter) {
             console.log("You won through 5 rounds!");
+            resultText[4].textContent = "You won through 5 rounds!";
         }
         else if (lossCounter >= tieCounter && lossCounter > winCounter) {
             console.log("You lost through 5 rounds!");
+            resultText[4].textContent = "You lost through 5 rounds!";
         }
         else if (tieCounter > winCounter && lossCounter) {
             console.log("Its a tie through 5 rounds!");
+            resultText[4].textContent = "Its a tie through 5 rounds!";
         }
         else if (winCounter === lossCounter) {
             console.log("Its a tie through 5 rounds!");
+            resultText[4].textContent = "Its a tie through 5 rounds!";
         }
     }
 
-
-    resultText[0].textContent = `Wins so far: ${winCounter}`;
-    resultText[1].textContent = `Losses so far: ${lossCounter}`;
-    resultText[2].textContent = `Ties so far: ${tieCounter}`;
+    resultText[0].textContent = `Computer: ${computer}`;
+    resultText[1].textContent = `Wins so far: ${winCounter}`;
+    resultText[2].textContent = `Losses so far: ${lossCounter}`;
+    resultText[3].textContent = `Ties so far: ${tieCounter}`;
     // textResults.textContent = `Losses so far: ${lossCounter}`;
 }
 
