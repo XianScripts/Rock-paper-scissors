@@ -147,6 +147,25 @@ function playcounter() {
             console.log("Its a tie through 5 rounds!");
             resultText[4].textContent = "Its a tie through 5 rounds!";
         }
+        
+        newButton = document.createElement('button');
+        newButton.innerText = "Reset game?";
+        document.body.appendChild(newButton);
+        newButton.addEventListener('click', () => {
+            playCount = 0;
+            winCounter = 0;
+            lossCounter = 0;
+            tieCounter = 0;
+            resultText[0].textContent = `Computer: ${computer}`;
+            resultText[1].textContent = `Wins so far: ${winCounter}`;
+            resultText[2].textContent = `Losses so far: ${lossCounter}`;
+            resultText[3].textContent = `Ties so far: ${tieCounter}`;
+            document.body.removeChild(newButton);
+            resultText[4].textContent = "";
+            resultText[0].textContent = "";
+        })
+
+
     }
 
     resultText[0].textContent = `Computer: ${computer}`;
