@@ -3,6 +3,8 @@
 }
 
 body {
+    background-image: url(https://i.pinimg.com/originals/ec/57/47/ec574779ce481605e59dea8e941eace9.gif);
+    background-size: cover;
     position: relative;
     margin: 0;
 }
