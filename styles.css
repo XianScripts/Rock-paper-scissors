@@ -40,6 +40,12 @@ body {
     margin-bottom: -20px;
 }
 
+#header h3 {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 .button {
     display: flex;
     justify-content: center;

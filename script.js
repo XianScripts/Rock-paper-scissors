@@ -152,13 +152,18 @@ function playcounter() {
         
         // Creates the button UI appending and removing children
         let newButton = document.createElement('button');
+        let continueButton = document.createElement('button');
         let newButtonContainer = document.querySelector('#reset-button');
         newButtonContainer.className = "button";
         newButton.innerText = "Reset game?";
+        continueButton.innerText = "Continue game?";
+        continueButton.className ="button"
         newButton.className = "button";
         console.log(newButton.outerHTML);
         console.log(newButtonContainer.outerHTML);
         newButtonContainer.appendChild(newButton);
+        // Continue button 
+        // newButtonContainer.appendChild(continueButton);
         newButton.addEventListener('click', () => {
             playCount = 0;
             winCounter = 0;
@@ -171,6 +176,12 @@ function playcounter() {
             newButtonContainer.removeChild(newButton);
             resultText[4].textContent = "";
             resultText[0].textContent = "";
+        })
+
+        // Continue button segment
+        // Continues keeping track and ends on even number plays
+        continueButton.addEventListener('click', () => {
+
         })
 
 
