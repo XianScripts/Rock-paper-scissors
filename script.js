@@ -29,63 +29,63 @@ function round(computer, player) { // Function to determine winner of a round be
         lossCounter++;
         return loser;
     }
-    else if (playerChoice === 'Rock' && computer === 'Scissors') { // Checks if player won rock outcome
+    else if (player === 'Rock' && computer === 'Scissors') { // Checks if player won rock outcome
         console.log(compString + 'Scissors');
         console.log(playString + 'Rock');
         winner = console.log("You win! Rock beats Scissors.");
         winCounter++;
         return winner;
     }
-    else if (playerChoice === 'Rock' && computer === 'Rock') { // Checks for tie
+    else if (player === 'Rock' && computer === 'Rock') { // Checks for tie
         console.log(compString + 'Rock');
         console.log(playString + 'Rock');
         tie = console.log("Tie!");
         tieCounter++;
         return tie;
     }
-    else if (playerChoice === 'Paper' && computer === 'Scissors') { // Checks if player lost paper outcome
+    else if (player === 'Paper' && computer === 'Scissors') { // Checks if player lost paper outcome
         console.log(compString + 'Scissors');
         console.log(playString + 'Paper');
         loser = console.log("You lose! Scissors beats Paper.");
         lossCounter++;
         return loser;
     }
-    else if (playerChoice === 'Paper' && computer === 'Rock') { // Checks if player won paper outcome
+    else if (player === 'Paper' && computer === 'Rock') { // Checks if player won paper outcome
         console.log(compString + 'Rock');
         console.log(playString + 'Paper');
         winner = console.log("You win! Paper beats Rock.");
         winCounter++;
         return winner;
     }
-    else if (playerChoice === 'Paper' && computer === 'Paper') { // Checks for tie
+    else if (player === 'Paper' && computer === 'Paper') { // Checks for tie
         console.log(compString + 'Paper');
         console.log(playString + 'Paper');
         tie = console.log("Tie!");
         tieCounter++;
         return tie;
     }
-    else if (playerChoice === 'Scissors' && computer === 'Rock') { // Checks if player lost scissors outcome
+    else if (player === 'Scissors' && computer === 'Rock') { // Checks if player lost scissors outcome
         console.log(compString + 'Rock');
         console.log(playString + 'Scissors');
         loser = console.log("You lose! Rock beats Scissors");
         lossCounter++;
         return loser;
     }
-    else if (playerChoice === 'Scissors' && computer === 'Paper') { // Checks if player won scissors outcome
+    else if (player === 'Scissors' && computer === 'Paper') { // Checks if player won scissors outcome
         console.log(compString + 'Paper');
         console.log(playString + 'Scissors');
         winner = console.log("You win! Scissors beats Paper.");
         winCounter++;
         return winner;
     }
-    else if (playerChoice === 'Scissors' && computer === 'Scissors') { // Checks for tie
+    else if (player === 'Scissors' && computer === 'Scissors') { // Checks for tie
         console.log(compString + 'Scissors');
         console.log(playString + 'Scissors');
         tie = console.log("Tie!");
         tieCounter++;
         return tie;
     }
-    else if (!(playerChoice === 'Rock' || player === 'Paper' || player === 'Scissors')) {
+    else if (!(player === 'Rock' || player === 'Paper' || player === 'Scissors')) {
         console.log("Refresh and try again, please only enter 'Rock', 'Paper', 'Scissors'");
         
     }
@@ -93,26 +93,6 @@ function round(computer, player) { // Function to determine winner of a round be
        
     
 }
-
-// Removing logic to play 5 rounds temp
-// for (let i = 0; i < 5; i++) { // Loop to play game function 5 times
-//     game();
-// }
-
-let playerChoice;
-
-// rock.addEventListener('click', () => {
-//     playerChoice = 'Rock';
-//     console.log(playerChoice);
-// });
-// paper.addEventListener('click', () => {
-//     playerChoice = 'Paper';
-//     console.log(playerChoice);
-// });
-// scissors.addEventListener('click', () => {
-//     playerChoice = 'Scissors';
-//     console.log(playerChoice);
-// });
 
 
 // UI segment
