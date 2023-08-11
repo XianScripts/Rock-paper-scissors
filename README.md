@@ -1,4 +1,7 @@
 # Rock-paper-scissors
-This is a web console game in which you play rock-paper-scissors with a computer. 
-Completed during the curriculum of The Odin Project.
-Press F12 on the browser window, or right-click and inspect to open the console.
+This is a rudimentary JavaScript game against a computer
+Click on any of the action buttons to select your input, 
+you'll play five rounds against a computer in the UI.
+Winner is best out of 5.
+Thank you for playing! Made with blood, sweat, and tears.
+- Christian
