@@ -99,7 +99,7 @@ function round(computer, player) { // Function to determine winner of a round be
 
 let resultText = document.querySelector('#game-results').children;
 let resultContainer = document.querySelector('#game-results');
-const rock = document.querySelector('.rock');
+const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     computer = getComputerChoice();
     player = 'Rock';
@@ -108,7 +108,7 @@ rock.addEventListener('click', () => {
     playcounter();
 })
 
-const paper = document.querySelector('.paper');
+const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
     computer = getComputerChoice();
     player = 'Paper';
@@ -117,7 +117,7 @@ paper.addEventListener('click', () => {
     playcounter();
 })
 
-const scissors = document.querySelector('.scissors');
+const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
     computer = getComputerChoice();
     player = 'Scissors';
