@@ -176,6 +176,9 @@ function playcounter() {
             newButtonContainer.removeChild(newButton);
             resultText[4].textContent = "";
             resultText[0].textContent = "";
+            resultText[1].textContent = "";
+            resultText[2].textContent = "";
+            resultText[3].textContent = "";
         })
 
         // Continue button segment

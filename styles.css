@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: enemy;
-    src: url(Enemy3D.ttf);
+    src: url(Enemy.ttf);
 }
 
 body {
@@ -25,6 +25,7 @@ body {
     padding-bottom: -50px;
     margin-bottom: -300px;
     flex-wrap: wrap;
+    color: mediumspringgreen;
 }
 #header :nth-child(1) {
     flex-basis: 100%;
@@ -78,7 +79,7 @@ body {
     border-radius: 0rem;
     color: #000000;
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 0.3rem;
     position: relative;
     
